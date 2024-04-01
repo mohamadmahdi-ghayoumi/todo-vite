@@ -88,7 +88,23 @@ const modalEye = document.getElementById("modalEye")
 modalEye.classList.remove("hidden")
 const overlayModal = document.getElementById('overlayModal');
 overlayModal.classList.remove("hidden")
+const selectedForEye = e.target.id;
+
+axios.get(`${BASE_URL}/todo/${selectedForEye}`).then((response) => {
+  const data = response.data;
+  document.getElementById("eye-task-span").innerText = data.title;
+  document.getElementById("eye-description-span").innerText =
+    data.description;
+  document.getElementById("eye-date-span").innerText = data.deadline;
+  document.getElementById("eye-priority-span").innerText = data.priority;
+  document.getElementById("eye-status-span").innerText = data.status;
+console.log(data)
+
+})
 }
+
+
+
 
   const deleteRow = () => {
     deleteData(data.id).then((res) => {
@@ -180,6 +196,8 @@ overlayModal.classList.remove("hidden")
             element: "img",
             className: " w-8 px-1 cursor-pointer bg-[#69757d] rounded",
             src: "../../src/assets/image/eye-solid.svg",
+            id: data.id,
+
             eventListener:[{
                 event:'click',
                 callback:eyeRow
