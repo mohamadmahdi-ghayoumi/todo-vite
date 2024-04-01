@@ -8,8 +8,10 @@ const totalPage = await getTableRow();
 export const pagination = () => {
   const prevPage = () => {
     document.getElementById("page").innerHTML = currentPage;
+    // document.getElementById("page1").innerHTML = currentPage;
     if (currentPage === 1) return;
     document.getElementById("page").innerHTML = --currentPage;
+    // document.getElementById("page1").innerHTML = --currentPage;
     const tableTbody = document.querySelector("#tableTbody");
     tableTbody.innerHTML = "loading...";
     const tableRowDiv = document.getElementById("tableRowDiv");
@@ -24,19 +26,21 @@ export const pagination = () => {
     if (currentPage >= totalPage.totalPage) return;
 
     document.getElementById("page").innerHTML = ++currentPage;
-    // console.log(currentPage);
-    // const tableTbody = document.querySelector("#tableTbody");
-    // tableTbody.innerHTML = "loading...";
+  
     const tableRowDiv = document.getElementById("tableRowDiv");
     tableRowDiv.remove();
     renderProducts("", currentPage);
   };
-  //   renderProducts("", currentPage);
 
   return El({
     element: "div",
     className: "flex gap-2",
     children: [
+      El({
+        element: "span",
+        innerText: "Row per page",
+      }),
+
       El({
         element: "span",
         innerText: "<",
@@ -53,6 +57,12 @@ export const pagination = () => {
         innerText: currentPage,
         className: "text-lg",
         id: "page",
+      }),
+      El({
+        element: "span",
+        innerText: `- ${totalPage.totalPage}`,
+        className: "text-lg",
+        id: "page1",
       }),
       El({
         element: "span",

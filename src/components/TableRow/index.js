@@ -82,6 +82,14 @@ export const createTableRow = (data) => {
     });
   };
 
+
+const eyeRow = (e)=>{
+const modalEye = document.getElementById("modalEye")
+modalEye.classList.remove("hidden")
+const overlayModal = document.getElementById('overlayModal');
+overlayModal.classList.remove("hidden")
+}
+
   const deleteRow = () => {
     deleteData(data.id).then((res) => {
       const tableTbody = document.getElementById("tableTbody");
@@ -147,7 +155,7 @@ export const createTableRow = (data) => {
         children: [
           El({
             element: "img",
-            className: "w-6 cursor-pointer bg-red-500 rounded",
+            className: "w-8 cursor-pointer bg-[#f41b35] px-1  rounded",
             src: "../../src/assets/image/trash-solid.svg",
             eventListener: [
               {
@@ -158,7 +166,7 @@ export const createTableRow = (data) => {
           }),
           El({
             element: "img",
-            className: "w-6 cursor-pointer bg-blue-500 rounded",
+            className: "w-8 cursor-pointer bg-[#0070fc] rounded px-1",
             src: "../../src/assets/image/edit-solid.svg",
             id: data.id,
             eventListener: [
@@ -170,12 +178,12 @@ export const createTableRow = (data) => {
           }),
           El({
             element: "img",
-            className: "w-6 cursor-pointer bg-gray-500 rounded",
+            className: " w-8 px-1 cursor-pointer bg-[#69757d] rounded",
             src: "../../src/assets/image/eye-solid.svg",
-            // eventListener:[{
-            //     event:'click',
-            //     callback:
-            // }]
+            eventListener:[{
+                event:'click',
+                callback:eyeRow
+            }]
           }),
         ],
       }),
