@@ -1,0 +1,34 @@
+{
+  "todo": [
+    {
+      "title": "7",
+      "deadline": "2024-03-22",
+      "priority": "Low",
+      "status": "ToDo",
+      "description": "",
+      "priorityColor": "bg-slate-300",
+      "statusColor": "bg-red-500 text-white",
+      "id": 1711792136241
+    },
+    {
+      "title": "2",
+      "deadline": "2024-03-27",
+      "priority": "Medium",
+      "status": "Doing",
+      "description": "",
+      "priorityColor": "bg-yellow-500",
+      "statusColor": "bg-yellow-500",
+      "id": 1711792136244
+    },
+    {
+      "title": "3",
+      "deadline": "2024-04-15",
+      "priority": "High",
+      "status": "Done",
+      "description": "mghm",
+      "priorityColor": "bg-red-500 text-white",
+      "statusColor": "bg-green-600 text-white",
+      "id": 1711792136245
+    }
+  ]
+}
