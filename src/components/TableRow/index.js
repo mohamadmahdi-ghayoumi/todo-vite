@@ -25,7 +25,7 @@ export const createTableRow = (data) => {
       document.getElementById("edit-date-input").value = data.deadline;
       document.getElementById("edit-priority_select").value = data.priority;
       document.getElementById("edit-status_select").value = data.status;
-      // console.log(data);
+
       editButton.addEventListener("click", () => {
         const prioritySelectEdit = document.getElementById(
           "edit-priority_select"

@@ -26,7 +26,7 @@ export const pagination = () => {
     if (currentPage >= totalPage.totalPage) return;
 
     document.getElementById("page").innerHTML = ++currentPage;
-  
+  console.log(`totalpage == ${totalPage}`)
     const tableRowDiv = document.getElementById("tableRowDiv");
     tableRowDiv.remove();
     renderProducts("", currentPage);

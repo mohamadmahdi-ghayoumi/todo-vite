@@ -22,11 +22,23 @@ import { El } from '../../../shared/El';
 
 export const renderProducts = (findItem = '', page, filters) => {
   getTableRow(findItem, page, filters).then((data) => {
-    // console   .log(data.data);
+    console   .log(data.data);
     const containerTbody = document.getElementById('table-one');
     const tableTbody = document.getElementById('tableTbody');
     tableTbody.innerText = '';
     // tableTbody.innerText=""
+    // console.log(data.data.length)
+// console.log(page)
+    // if(data.data.length ==0){
+    //   console.log(`page : ${page}`)
+    //   document.getElementById("page").innerHTML = --page; 
+    //   const tableRowDiv = document.getElementById("tableRowDiv");
+    //   // tableRowDiv.remove();
+    //   console.log(tableRowDi)
+    //   renderProducts("", page);     
+    // }else {
+    //   // console.log("dare")
+    // }
     let tableRowDiv = El({
       element: 'tbody',
       id: 'tableRowDiv',
